@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 import MagicalParticles from "@/components/MagicalParticles";
 import CustomCursor from "@/components/CustomCursor";
 import SortingQuiz from "@/components/SortingQuiz";
+import SectionDots from "@/components/SectionDots";
+import { ScrollProgress } from "@/components/ScrollAnimations";
 
 const Index = () => {
   const [sorted, setSorted] = useState(false);
@@ -27,6 +29,8 @@ const Index = () => {
     <div className="min-h-screen bg-background relative">
       <CustomCursor />
       <MagicalParticles />
+      <ScrollProgress />
+      <SectionDots />
       <Navigation />
       <Hero house={house} />
       <About />
