@@ -62,11 +62,11 @@ const Contact = () => {
         <div ref={ref} className="max-w-6xl mx-auto">
           <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
-              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Crimson Text', serif" }}>Contact</p>
-              <h2 className="text-3xl sm:text-4xl font-black mb-2" style={{ fontFamily: "'Cinzel', serif" }}>
+              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Courier Prime', monospace" }}>Contact</p>
+              <h2 className="text-3xl sm:text-4xl font-black mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>
                 Send an <span className="text-shimmer">Owl</span>
               </h2>
-              <p className="text-muted-foreground mb-8" style={{ fontFamily: "'Crimson Text', serif" }}>
+              <p className="text-muted-foreground mb-8" style={{ fontFamily: "'Courier Prime', monospace" }}>
                 Have a project in mind? Let's create something magical together.
               </p>
 

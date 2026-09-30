@@ -77,13 +77,13 @@ const Projects = () => {
           className={`flex items-start justify-between mb-14 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <div>
-            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Crimson Text', serif" }}>Portfolio</p>
-            <h2 className="text-3xl sm:text-4xl font-black mb-2" style={{ fontFamily: "'Cinzel', serif" }}>
+            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Courier Prime', monospace" }}>Portfolio</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>
               Magical <span className="text-shimmer">Projects</span>
             </h2>
           </div>
           <div className="hidden sm:block max-w-xs text-right">
-            <p className="text-sm text-muted-foreground italic" style={{ fontFamily: "'Crimson Text', serif" }}>
+            <p className="text-sm text-muted-foreground italic" style={{ fontFamily: "'Courier Prime', monospace" }}>
               "After all this time? — Always."
             </p>
           </div>
@@ -113,10 +113,10 @@ const Projects = () => {
               </div>
 
               <div className="p-4">
-                <h3 className="text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors" style={{ fontFamily: "'Cinzel', serif" }}>
+                <h3 className="text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors" style={{ fontFamily: "'Space Mono', monospace" }}>
                   {project.title}
                 </h3>
-                <p className="text-xs text-muted-foreground line-clamp-2 mb-3" style={{ fontFamily: "'Crimson Text', serif" }}>
+                <p className="text-xs text-muted-foreground line-clamp-2 mb-3" style={{ fontFamily: "'Courier Prime', monospace" }}>
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1 mb-3">
@@ -138,7 +138,7 @@ const Projects = () => {
         </div>
 
         <div className={`flex items-center gap-3 transition-all duration-1000 delay-500 ${gridVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <span className="text-lg font-bold text-foreground" style={{ fontFamily: "'Cinzel', serif" }}>RECENT WORK</span>
+          <span className="text-lg font-bold text-foreground" style={{ fontFamily: "'Space Mono', monospace" }}>RECENT WORK</span>
           <Button
             variant="outline"
             size="sm"

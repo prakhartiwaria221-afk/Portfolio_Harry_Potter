@@ -26,13 +26,13 @@ const Footer = () => {
         <div className="py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 pl-14 sm:pl-28">
             <span className="text-primary text-lg">⚡</span>
-            <p className="text-sm text-muted-foreground" style={{ fontFamily: "'Crimson Text', serif" }}>
+            <p className="text-sm text-muted-foreground" style={{ fontFamily: "'Courier Prime', monospace" }}>
               © {currentYear} Prakhar Tiwari. Mischief Managed.
             </p>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground mr-2" style={{ fontFamily: "'Crimson Text', serif" }}>Follow</span>
+            <span className="text-sm text-muted-foreground mr-2" style={{ fontFamily: "'Courier Prime', monospace" }}>Follow</span>
             {socialLinks.map((social, index) => (
               <a
                 key={index}

@@ -80,7 +80,7 @@ const Hero = ({ house }: HeroProps) => {
           <div className="space-y-6 animate-fade-in text-center lg:text-left order-2">
             {house && house !== "skip" && (
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 mb-2">
-                <span className="text-sm text-primary font-medium" style={{ fontFamily: "'Crimson Text', serif" }}>
+                <span className="text-sm text-primary font-medium" style={{ fontFamily: "'Courier Prime', monospace" }}>
                   Sorted into {house} ⚡
                 </span>
               </div>
@@ -88,17 +88,17 @@ const Hero = ({ house }: HeroProps) => {
             <div className="text-primary/40 text-3xl">⚡</div>
 
             <div className="space-y-2">
-              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'Crimson Text', serif" }}>
+              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'Courier Prime', monospace" }}>
                 Welcome to my magical world
               </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight" style={{ fontFamily: "'Cinzel', serif" }}>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight" style={{ fontFamily: "'Space Mono', monospace" }}>
                 <span className="text-foreground">I am </span>
                 <span className="text-shimmer">Prakhar</span>
               </h1>
             </div>
 
             <div className="h-8">
-              <span className="text-muted-foreground text-lg md:text-xl font-light italic tracking-wide" style={{ fontFamily: "'Crimson Text', serif" }}>
+              <span className="text-muted-foreground text-lg md:text-xl font-light italic tracking-wide" style={{ fontFamily: "'Courier Prime', monospace" }}>
                 {currentText}
                 <span className="animate-pulse text-primary">|</span>
               </span>
@@ -106,7 +106,7 @@ const Hero = ({ house }: HeroProps) => {
 
             <div className="max-w-xs mx-auto lg:mx-0">
               <div className="quote-box">
-                <p className="text-sm text-muted-foreground italic leading-relaxed" style={{ fontFamily: "'Crimson Text', serif" }}>
+                <p className="text-sm text-muted-foreground italic leading-relaxed" style={{ fontFamily: "'Courier Prime', monospace" }}>
                   "It does not do to dwell on dreams and forget to live — but blending creativity and code is pure magic."
                 </p>
               </div>
@@ -145,7 +145,7 @@ const Hero = ({ house }: HeroProps) => {
       />
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 animate-fade-in">
-        <span className="text-xs text-muted-foreground tracking-widest uppercase" style={{ fontFamily: "'Crimson Text', serif" }}>Scroll</span>
+        <span className="text-xs text-muted-foreground tracking-widest uppercase" style={{ fontFamily: "'Courier Prime', monospace" }}>Scroll</span>
         <div className="w-5 h-9 rounded-full border border-border/60 flex justify-center pt-2">
           <div className="w-1 h-2.5 rounded-full bg-primary/50 animate-bounce" />
         </div>

@@ -52,11 +52,11 @@ const Skills = () => {
           ref={headerRef}
           className={`mb-16 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Crimson Text', serif" }}>My Skills</p>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ fontFamily: "'Cinzel', serif" }}>
+          <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Courier Prime', monospace" }}>My Skills</p>
+          <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ fontFamily: "'Space Mono', monospace" }}>
             Skills & <span className="text-shimmer">Expertise</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl" style={{ fontFamily: "'Crimson Text', serif" }}>
+          <p className="text-muted-foreground text-lg max-w-2xl" style={{ fontFamily: "'Courier Prime', monospace" }}>
             A blend of technical prowess and creative excellence
           </p>
         </div>
@@ -72,7 +72,7 @@ const Skills = () => {
                 <Code2 className="text-primary" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground" style={{ fontFamily: "'Cinzel', serif" }}>Technical Skills</h3>
+                <h3 className="text-xl font-bold text-foreground" style={{ fontFamily: "'Space Mono', monospace" }}>Technical Skills</h3>
                 <p className="text-sm text-muted-foreground">Languages & frameworks</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Skills = () => {
                 <Palette className="text-secondary" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground" style={{ fontFamily: "'Cinzel', serif" }}>Creative Skills</h3>
+                <h3 className="text-xl font-bold text-foreground" style={{ fontFamily: "'Space Mono', monospace" }}>Creative Skills</h3>
                 <p className="text-sm text-muted-foreground">Design & editing</p>
               </div>
             </div>
@@ -135,7 +135,7 @@ const Skills = () => {
             <div className="p-5 rounded-2xl border border-border/50 bg-muted/30">
               <div className="flex items-start gap-3">
                 <Zap className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                <p className="text-sm text-muted-foreground leading-relaxed" style={{ fontFamily: "'Crimson Text', serif" }}>
+                <p className="text-sm text-muted-foreground leading-relaxed" style={{ fontFamily: "'Courier Prime', monospace" }}>
                   Combining technical precision with creative vision to deliver
                   <span className="text-foreground font-medium"> functionally robust</span> and
                   <span className="text-foreground font-medium"> visually stunning</span> projects.
@@ -148,7 +148,7 @@ const Skills = () => {
         {/* Tools */}
         <div ref={toolsRef} className={`transition-all duration-1000 ${toolsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "'Cinzel', serif" }}>Tools & Technologies</h3>
+            <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>Tools & Technologies</h3>
             <p className="text-muted-foreground text-sm">Technologies I work with daily</p>
           </div>
 

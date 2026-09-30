@@ -52,8 +52,8 @@ const About = () => {
             ref={headerRef}
             className={`mb-16 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Crimson Text', serif" }}>About Me</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6" style={{ fontFamily: "'Cinzel', serif" }}>
+            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "'Courier Prime', monospace" }}>About Me</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6" style={{ fontFamily: "'Space Mono', monospace" }}>
               A Consistent Experience<br />
               is a <span className="text-shimmer">Better</span> Experience.
             </h2>
@@ -66,7 +66,7 @@ const About = () => {
                   <span className="text-primary/50 text-sm">✦</span>
                   <p className={`text-lg sm:text-xl transition-all duration-300 ${
                     i === 0 ? 'font-bold text-foreground text-2xl' : 'text-muted-foreground hover:text-foreground'
-                  }`} style={{ fontFamily: "'Crimson Text', serif" }}>
+                  }`} style={{ fontFamily: "'Courier Prime', monospace" }}>
                     {service}
                   </p>
                 </div>
@@ -75,7 +75,7 @@ const About = () => {
 
             <div className="flex items-center relative">
               <div className="quote-box max-w-sm">
-                <p className="text-muted-foreground italic leading-relaxed" style={{ fontFamily: "'Crimson Text', serif" }}>
+                <p className="text-muted-foreground italic leading-relaxed" style={{ fontFamily: "'Courier Prime', monospace" }}>
                   "It is our choices that show what we truly are, far more than our abilities — blending creativity and code to craft magic."
                 </p>
               </div>
@@ -96,7 +96,7 @@ const About = () => {
             ref={statsRef}
             className={`mb-20 transition-all duration-1000 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2" style={{ fontFamily: "'Cinzel', serif" }}>
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>
               Crafting Digital <span className="text-shimmer">Magic</span>
             </h3>
             <div className="grid grid-cols-3 gap-4 mt-8 max-w-lg">
@@ -109,7 +109,7 @@ const About = () => {
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className="text-3xl sm:text-4xl font-black text-foreground mb-1" style={{ fontFamily: "'Cinzel', serif" }}>
+                  <div className="text-3xl sm:text-4xl font-black text-foreground mb-1" style={{ fontFamily: "'Space Mono', monospace" }}>
                     {item.value}
                   </div>
                   <div className="text-xs text-muted-foreground">{item.label}</div>
@@ -124,7 +124,7 @@ const About = () => {
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                 <GraduationCap className="text-primary" size={20} />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-foreground" style={{ fontFamily: "'Cinzel', serif" }}>Education</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground" style={{ fontFamily: "'Space Mono', monospace" }}>Education</h3>
             </div>
 
             <div className="space-y-4">
@@ -149,7 +149,7 @@ const About = () => {
                       <GraduationCap className="text-primary" size={22} />
                     </div>
                     <div className="flex-1 min-w-0 pr-20">
-                      <h4 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-1" style={{ fontFamily: "'Cinzel', serif" }}>
+                      <h4 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-1" style={{ fontFamily: "'Space Mono', monospace" }}>
                         {edu.degree}
                       </h4>
                       <div className="flex items-center gap-2 text-muted-foreground text-sm">
