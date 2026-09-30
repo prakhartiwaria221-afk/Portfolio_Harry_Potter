@@ -93,7 +93,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <a
               key={project.title}
-              href={`https://github.com/prakhartiwaria221-afk/${project.repo}`}
+              href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View ${project.title} code on GitHub`}
