@@ -15,32 +15,32 @@ const Projects = () => {
   const projects = [
     {
       title: "MindBloom",
+      repo: "mindbloom",
       description: "AI-based adaptive learning platform with gamified learning, voice-guided systems, emotion-aware apps.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
       image: mindbloomImage,
-      github: "https://github.com/prakhartiwaria221-afk",
-    },
+          },
     {
       title: "CoordiNet",
+      repo: "coordinet",
       description: "Emergency coordination platform connecting police, hospitals, and disaster authorities with citizens.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
       image: coordinetImage,
-      github: "https://github.com/prakhartiwaria221-afk",
-    },
+          },
     {
       title: "BookPard",
+      repo: "bookpard",
       description: "A full-stack web application featuring authentication, book selling, admin dashboard, secure payments.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
       image: bookpardImage,
-      github: "https://github.com/prakhartiwaria221-afk",
-    },
+          },
     {
       title: "Library Management",
+      repo: "library-management",
       description: "Console-based system using C++ and OOP concepts with file handling for data storage.",
       tags: ["C++", "OOP"],
       image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=500&fit=crop",
-      github: "https://github.com/prakhartiwaria221-afk",
-    },
+          },
   ];
 
   return (
@@ -90,9 +90,13 @@ const Projects = () => {
 
         <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {projects.map((project, index) => (
-            <div
+            <a
               key={project.title}
-              className={`group relative rounded-2xl overflow-hidden card-parchment magic-border transition-all duration-700 ${
+              href={`https://github.com/prakhartiwaria221-afk/${project.repo}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} code on GitHub`}
+              className={`group block cursor-pointer hover:-translate-y-1 relative rounded-2xl overflow-hidden card-parchment magic-border transition-all duration-700 ${
                 gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
@@ -121,17 +125,14 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <span
                   className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github size={12} />
                   View Code
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

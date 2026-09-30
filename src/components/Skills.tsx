@@ -28,6 +28,7 @@ const Skills = () => {
     { name: "Git", icon: "🔀" },
     { name: "VS Code", icon: "💻" },
     { name: "Figma", icon: "🎯" },
+    { name: "SQL", icon: "🗄️" },
   ];
 
   return (
