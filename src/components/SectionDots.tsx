@@ -36,7 +36,7 @@ const SectionDots = () => {
         />
       ))}
       {left > 0 && (
-        <span className="mt-2 text-[10px] text-primary [writing-mode:vertical-rl]" style={{ fontFamily: "'Crimson Text', serif" }}>
+        <span className="mt-2 text-[10px] text-primary [writing-mode:vertical-rl]" style={{ fontFamily: "'Courier Prime', monospace" }}>
           {left} secret{left > 1 ? "s" : ""} left ⚡
         </span>
       )}

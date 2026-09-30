@@ -46,7 +46,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-4">
           <a href="#home" className="flex items-center gap-2 group">
-            <span className="text-xl font-bold text-foreground tracking-tight" style={{ fontFamily: "'Cinzel', serif" }}>
+            <span className="text-xl font-bold text-foreground tracking-tight" style={{ fontFamily: "'Space Mono', monospace" }}>
               P<span className="text-primary">⚡</span>T
             </span>
           </a>
@@ -63,7 +63,7 @@ const Navigation = () => {
                       ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
-                  style={{ fontFamily: "'Crimson Text', serif", fontSize: '0.95rem' }}
+                  style={{ fontFamily: "'Courier Prime', monospace", fontSize: '0.95rem' }}
                 >
                   {link.name}
                 </a>
@@ -99,7 +99,7 @@ const Navigation = () => {
                         : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                     }`}
                     onClick={() => setIsOpen(false)}
-                    style={{ fontFamily: "'Crimson Text', serif" }}
+                    style={{ fontFamily: "'Courier Prime', monospace" }}
                   >
                     {link.name}
                   </a>
