@@ -1,14 +1,13 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
 import profileImage from "@/assets/profile-prakhar.jpg";
 import dumbledoreImage from "@/assets/dumbledore.png";
 import goldenSnitchImage from "@/assets/golden-snitch.png";
-import harryImage from "@/assets/harry-potter.png";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
-import SparkleCanvas from "./SparkleCanvas";
 
 interface HeroProps {
   house?: string | null;
 }
+
+const mono = { fontFamily: "'Space Mono', monospace" };
 
 const Hero = ({ house }: HeroProps) => {
   const { currentText } = useTypingAnimation({
@@ -19,135 +18,71 @@ const Hero = ({ house }: HeroProps) => {
   });
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      <SparkleCanvas count={20} color="gold" />
+    <section id="home" className="min-h-screen relative overflow-hidden pt-28 pb-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          {/* Left: labels */}
+          <div className="lg:col-span-6 relative order-2 lg:order-1 space-y-8">
+            <p className="text-xs uppercase tracking-widest leading-tight" style={mono}>
+              Freelance <span className="font-bold underline">Front-End</span><br />Developer · Hogwarts Alumni ⚡
+            </p>
 
-      {/* Decorative magical elements */}
-      <div className="absolute top-20 right-16 w-32 h-32 rounded-full border border-primary/20 animate-float-gentle" />
-      <div className="absolute bottom-32 left-12 w-20 h-20 rounded-full bg-secondary/10 animate-float-blob" />
-
-      {/* Golden Snitch floating */}
-      <img
-        src={goldenSnitchImage}
-        alt="Golden Snitch"
-        loading="lazy"
-        width={80}
-        height={80}
-        className="absolute top-20 right-2 sm:right-[15%] w-10 sm:w-20 animate-float-gentle opacity-60"
-        style={{ animationDelay: '0.5s' }}
-      />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left - Profile with Dumbledore */}
-          <div className="relative flex items-center justify-center order-1">
-            <div className="relative w-full max-w-sm mx-auto">
-              <div
-                className="w-full h-[450px] sm:h-[520px] relative rounded-t-[200px] overflow-hidden animate-glow-pulse"
-                style={{
-                  background: 'linear-gradient(180deg, hsl(43 40% 30%), hsl(230 25% 12%))',
-                }}
-              >
-                <img
-                  src={profileImage}
-                  alt="Prakhar Tiwari"
-                  className="w-full h-full object-cover object-top"
-                />
+            <div className="relative">
+              <div className="zine-label -rotate-6 text-4xl sm:text-6xl font-bold tracking-wider">
+                <span className="mr-3 text-2xl align-middle">☺</span>PRAKHAR
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-16 h-16 border border-primary/30 rounded-full" />
-              <div className="absolute -bottom-2 -right-3 w-12 h-12 border border-secondary/30 rounded-full" />
+              {/* Squiggle arrow */}
+              <svg viewBox="0 0 160 90" className="w-32 sm:w-40 ml-24 mt-2 text-foreground" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 10 C 40 80, 90 -10, 120 60" />
+                <path d="M110 55 L122 62 L124 48" />
+              </svg>
             </div>
 
-            {/* Dumbledore next to profile */}
-            <div className="absolute -right-2 sm:-right-16 bottom-0 z-20">
-              <div className="relative">
-                <SparkleCanvas count={8} color="gold" className="!-inset-8" />
-                <img
-                  src={dumbledoreImage}
-                  alt="Dumbledore"
-                  loading="lazy"
-                  width={180}
-                  height={270}
-                  className="w-16 sm:w-32 lg:w-44 drop-shadow-[0_0_20px_hsl(43,72%,55%,0.3)] animate-float-gentle"
-                  style={{ animationDelay: '1.5s' }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content */}
-          <div className="space-y-6 animate-fade-in text-center lg:text-left order-2">
-            {house && house !== "skip" && (
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 mb-2">
-                <span className="text-sm text-primary font-medium" style={{ fontFamily: "'Courier Prime', monospace" }}>
-                  Sorted into {house} ⚡
-                </span>
-              </div>
-            )}
-            <div className="text-primary/40 text-3xl">⚡</div>
-
-            <div className="space-y-2">
-              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'Courier Prime', monospace" }}>
-                Welcome to my magical world
+            <div className="space-y-3 max-w-md">
+              <p className="text-lg" style={mono}>
+                &gt; {currentText}
+                <span className="animate-pulse">_</span>
               </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <span className="text-foreground">I am </span>
-                <span className="text-shimmer">Prakhar</span>
-              </h1>
-            </div>
-
-            <div className="h-8">
-              <span className="text-muted-foreground text-lg md:text-xl font-light italic tracking-wide" style={{ fontFamily: "'Courier Prime', monospace" }}>
-                {currentText}
-                <span className="animate-pulse text-primary">|</span>
-              </span>
-            </div>
-
-            <div className="max-w-xs mx-auto lg:mx-0">
-              <div className="quote-box">
-                <p className="text-sm text-muted-foreground italic leading-relaxed" style={{ fontFamily: "'Courier Prime', monospace" }}>
-                  "It does not do to dwell on dreams and forget to live — but blending creativity and code is pure magic."
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                "It does not do to dwell on dreams and forget to live" — so I blend code and creativity into
+                interfaces that feel a little like magic.
+              </p>
+              {house && house !== "skip" && (
+                <p className="text-xs uppercase tracking-widest" style={mono}>
+                  ✱ Sorted into <span className="font-bold underline">{house}</span>
                 </p>
-              </div>
+              )}
             </div>
 
-            <div className="flex gap-3 justify-center lg:justify-start pt-2">
-              {[
-                { icon: Github, href: "https://github.com/prakhartiwaria221-afk", label: "GH" },
-                { icon: Linkedin, href: "https://linkedin.com/in/prakhar-tiwari-8b04a7296", label: "IN" },
-                { icon: Instagram, href: "https://instagram.com/prakhar6038", label: "IG" },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 text-xs font-bold"
-                >
-                  {social.label}
-                </a>
-              ))}
+            <div className="flex flex-wrap gap-3">
+              <a href="#projects" className="zine-label text-sm hover:-translate-y-0.5 transition-transform">MY WORK →</a>
+              <a href="#contact" className="zine-label text-sm bg-foreground text-background hover:-translate-y-0.5 transition-transform">SEND AN OWL 🦉</a>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Harry Potter character */}
-      <img
-        src={harryImage}
-        alt="Harry Potter"
-        loading="lazy"
-        width={512}
-        height={512}
-        className="absolute bottom-4 left-2 sm:bottom-12 sm:left-[5%] w-12 sm:w-24 opacity-50 hover:opacity-90 transition-opacity duration-300 animate-float-gentle pointer-events-none"
-        style={{ animationDelay: '2s' }}
-      />
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 animate-fade-in">
-        <span className="text-xs text-muted-foreground tracking-widest uppercase" style={{ fontFamily: "'Courier Prime', monospace" }}>Scroll</span>
-        <div className="w-5 h-9 rounded-full border border-border/60 flex justify-center pt-2">
-          <div className="w-1 h-2.5 rounded-full bg-primary/50 animate-bounce" />
+          {/* Right: photo */}
+          <div className="lg:col-span-6 relative order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-sm">
+              <div className="border-2 border-foreground overflow-hidden aspect-[3/4]">
+                <img src={profileImage} alt="Prakhar Tiwari" className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="zine-label rotate-6 absolute -bottom-6 -left-6 sm:-left-12 text-3xl sm:text-5xl font-bold tracking-wider">
+                TIWARI
+              </div>
+              <img
+                src={dumbledoreImage}
+                alt="Dumbledore"
+                loading="lazy"
+                className="absolute -right-4 sm:-right-14 bottom-10 w-16 sm:w-28 animate-float-gentle pointer-events-none"
+              />
+              <img
+                src={goldenSnitchImage}
+                alt="Golden Snitch"
+                loading="lazy"
+                className="absolute -top-6 -left-6 w-12 sm:w-16 animate-float-gentle pointer-events-none"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
