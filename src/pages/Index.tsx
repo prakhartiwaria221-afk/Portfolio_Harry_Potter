@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -9,23 +9,17 @@ import Footer from "@/components/Footer";
 import MagicalParticles from "@/components/MagicalParticles";
 import CustomCursor from "@/components/CustomCursor";
 import SortingQuiz from "@/components/SortingQuiz";
-import SpellEffects from "@/components/SpellEffects";
-import SectionDivider from "@/components/SectionDivider";
-import { ParallaxShapes } from "@/components/ParallaxSection";
-import LoadingScreen from "@/components/LoadingScreen";
-import GradientMesh from "@/components/GradientMesh";
+import SectionDots from "@/components/SectionDots";
+import { ScrollProgress } from "@/components/ScrollAnimations";
 
 const Index = () => {
   const [sorted, setSorted] = useState(false);
   const [house, setHouse] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
 
   const handleSorted = (h: string) => {
     setHouse(h);
     setSorted(true);
   };
-
-  const handleLoadingComplete = useCallback(() => setLoading(false), []);
 
   if (!sorted) {
     return <SortingQuiz onComplete={handleSorted} />;
@@ -33,21 +27,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {loading && <LoadingScreen onComplete={handleLoadingComplete} />}
-      <GradientMesh />
       <CustomCursor />
       <MagicalParticles />
-      <SpellEffects />
-      <ParallaxShapes />
+      <ScrollProgress />
+      <SectionDots />
       <Navigation />
       <Hero house={house} />
-      <SectionDivider variant="ornate" />
       <About />
-      <SectionDivider variant="ornate" />
       <Skills />
-      <SectionDivider variant="ornate" />
       <Projects />
-      <SectionDivider variant="ornate" />
       <Contact />
       <Footer />
     </div>
