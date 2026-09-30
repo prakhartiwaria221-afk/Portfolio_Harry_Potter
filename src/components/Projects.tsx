@@ -12,31 +12,32 @@ const Projects = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
 
+  const profileUrl = "https://github.com/prakhartiwaria221-afk";
   const projects = [
     {
       title: "MindBloom",
-      repo: "mindbloom",
+      link: "https://github.com/prakhartiwaria221-afk/MindBloom",
       description: "AI-based adaptive learning platform with gamified learning, voice-guided systems, emotion-aware apps.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
       image: mindbloomImage,
           },
     {
       title: "CoordiNet",
-      repo: "coordinet",
+      link: profileUrl,
       description: "Emergency coordination platform connecting police, hospitals, and disaster authorities with citizens.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
       image: coordinetImage,
           },
     {
       title: "BookPard",
-      repo: "bookpard",
+      link: "https://github.com/prakhartiwaria221-afk/bookpard-treasure-trove",
       description: "A full-stack web application featuring authentication, book selling, admin dashboard, secure payments.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
       image: bookpardImage,
           },
     {
       title: "Library Management",
-      repo: "library-management",
+      link: "https://github.com/prakhartiwaria221-afk/Library-Management-System",
       description: "Console-based system using C++ and OOP concepts with file handling for data storage.",
       tags: ["C++", "OOP"],
       image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=500&fit=crop",
