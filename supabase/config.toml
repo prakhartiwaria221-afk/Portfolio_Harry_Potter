@@ -2,3 +2,6 @@ project_id = "abtstziactvchsbmbnpq"
 
 [functions.send-contact-email]
 verify_jwt = false
+
+[functions.recommend-projects]
+verify_jwt = false
