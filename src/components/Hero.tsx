@@ -56,7 +56,7 @@ const Hero = ({ house }: HeroProps) => {
 
             <div className="flex flex-wrap gap-3">
               <a href="#projects" className="zine-label text-sm hover:-translate-y-0.5 transition-transform">MY WORK →</a>
-              <a href="#contact" className="zine-label text-sm bg-foreground text-background hover:-translate-y-0.5 transition-transform">SEND AN OWL 🦉</a>
+              <a href="#contact" className="zine-label text-sm hover:-translate-y-0.5 transition-transform" style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}>SEND AN OWL 🦉</a>
             </div>
           </div>
 
