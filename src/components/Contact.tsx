@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { Loader2, ArrowRight } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SparkleCanvas from "./SparkleCanvas";
 import profileImage from "@/assets/profile-prakhar.jpg";
 import hedwigImage from "@/assets/hedwig.png";
 import hagridImage from "@/assets/hagrid.png";
@@ -58,7 +54,7 @@ const Contact = () => {
           <div className="lg:col-span-7 space-y-8">
             <span className="zine-label -rotate-2 text-3xl sm:text-4xl">SEND AN <span className="font-bold">OWL</span> 🦉</span>
             <div className="space-y-2 text-sm underline" style={mono}>
-              <p><a href="mailto:prakhartiwari0204@gmail.com">PRAKHARTIWARI0204@GMAIL.COM</a></p>
+              <p><a href="mailto:prakhartiwari6038@gmail.com">PRAKHARTIWARI6038@GMAIL.COM</a></p>
               <p><a href="https://instagram.com/prakhar6038" target="_blank" rel="noopener noreferrer">@PRAKHAR6038</a></p>
               <p><a href="https://github.com/prakhartiwaria221-afk" target="_blank" rel="noopener noreferrer">GITHUB.COM/PRAKHARTIWARIA221-AFK</a></p>
               <p><a href="https://linkedin.com/in/prakhar-tiwari-8b04a7296" target="_blank" rel="noopener noreferrer">LINKEDIN / PRAKHAR TIWARI</a></p>
