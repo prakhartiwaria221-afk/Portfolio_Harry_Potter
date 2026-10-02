@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Achievements from "@/components/Achievements";
+import CommandPalette from "@/components/CommandPalette";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MagicalParticles from "@/components/MagicalParticles";
@@ -31,10 +33,12 @@ const Index = () => {
       <MagicalParticles />
       <ScrollProgress />
       <SectionDots />
+      <CommandPalette />
       <Navigation />
       <Hero house={house} />
       <About />
       <Skills />
+      <Achievements />
       <Projects />
       <Contact />
       <Footer />

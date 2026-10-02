@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram, Printer } from "lucide-react";
 import dobbyImage from "@/assets/dobby.png";
 
 const Footer = () => {
@@ -32,6 +32,14 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => window.print()}
+              className="flex items-center gap-1.5 mr-3 px-3 py-1.5 border border-border text-xs font-bold text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+              style={{ fontFamily: "'Courier Prime', monospace" }}
+              aria-label="Print or save resume"
+            >
+              <Printer className="w-3.5 h-3.5" /> Résumé
+            </button>
             <span className="text-sm text-muted-foreground mr-2" style={{ fontFamily: "'Courier Prime', monospace" }}>Follow</span>
             {socialLinks.map((social, index) => (
               <a

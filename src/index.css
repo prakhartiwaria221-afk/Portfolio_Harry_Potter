@@ -228,3 +228,12 @@ img[alt="Prakhar Tiwari"] { filter: grayscale(1) contrast(1.05); }
 .zine-label { display: inline-block; border: 2px solid hsl(var(--border)); background: hsl(var(--card)); padding: .35rem 1rem; box-shadow: 4px 4px 0 hsl(var(--border)); font-family: 'Space Mono', monospace; }
 .animate-glow-pulse { animation: none; }
 .quote-box { border-left: 3px solid hsl(var(--foreground)); }
+
+/* Print-friendly résumé */
+@media print {
+  nav, footer, canvas, [class*="cursor"], [class*="particle"], .fixed { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  section { page-break-inside: avoid; padding: 1rem 0 !important; }
+  img { filter: grayscale(1) !important; }
+  a { text-decoration: none; color: #000 !important; }
+}
