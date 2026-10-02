@@ -1,4 +1,4 @@
-import { FadeIn } from "@/components/ScrollAnimations";
+import { ScrollReveal } from "@/components/ScrollAnimations";
 import { Trophy, Code2, GraduationCap, Sparkles } from "lucide-react";
 
 const achievements = [
@@ -28,7 +28,7 @@ const Achievements = () => {
   return (
     <section id="achievements" className="py-20 px-4 relative">
       <div className="max-w-5xl mx-auto">
-        <FadeIn>
+        <ScrollReveal>
           <div className="text-center mb-12">
             <span className="zine-label inline-block border-2 border-foreground px-4 py-1 font-mono text-sm tracking-widest uppercase -rotate-2 bg-card">
               Achievements ✦
@@ -40,11 +40,11 @@ const Achievements = () => {
               "It is our choices that show what we truly are." — and what we've built.
             </p>
           </div>
-        </FadeIn>
+        </ScrollReveal>
 
         <div className="grid sm:grid-cols-2 gap-6">
           {achievements.map((a, i) => (
-            <FadeIn key={a.title} delay={i * 100}>
+            <ScrollReveal key={a.title} delay={i * 100}>
               <div className="border-2 border-foreground bg-card p-6 h-full hover:-translate-y-1 transition-transform duration-300 shadow-[4px_4px_0_hsl(var(--foreground))]">
                 <a.icon className="w-8 h-8 mb-4 text-primary" />
                 <h3 className="font-mono font-bold text-lg uppercase tracking-wide mb-2">
@@ -54,7 +54,7 @@ const Achievements = () => {
                   {a.text}
                 </p>
               </div>
-            </FadeIn>
+            </ScrollReveal>
           ))}
         </div>
       </div>
