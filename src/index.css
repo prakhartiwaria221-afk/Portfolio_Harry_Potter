@@ -237,3 +237,9 @@ img[alt="Prakhar Tiwari"] { filter: grayscale(1) contrast(1.05); }
   img { filter: grayscale(1) !important; }
   a { text-decoration: none; color: #000 !important; }
 }
+
+/* Scroll reveal end state */
+.scroll-reveal.animate-revealed {
+  opacity: 1 !important;
+  transform: none !important;
+}
