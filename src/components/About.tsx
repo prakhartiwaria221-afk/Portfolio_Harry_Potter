@@ -1,8 +1,7 @@
 import sortingHatImage from "@/assets/sorting-hat.png";
 import hermioneImage from "@/assets/hermione.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const mono = { fontFamily: "'Space Mono', monospace" };
+import { GraduationCap } from "lucide-react";
 
 const education = [
   { degree: "B.Tech", institution: "ITM Gwalior", period: "2024 – 2028", status: "Pursuing" },
@@ -20,55 +19,53 @@ const About = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="about" className="py-24 border-t-2 border-foreground relative">
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="glow-orb w-[400px] h-[400px] top-20 -right-40" style={{ background: "hsl(var(--accent) / 0.08)" }} />
       <div
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Picture block */}
           <div className="lg:col-span-5 relative">
-            <div className="border-2 border-foreground bg-card aspect-square flex items-center justify-center">
-              <img src={hermioneImage} alt="Hermione Granger" loading="lazy" className="w-2/3" />
+            <div className="glass-card aspect-square flex items-center justify-center overflow-hidden">
+              <img src={hermioneImage} alt="Hermione Granger" loading="lazy" className="w-2/3 drop-shadow-[0_0_30px_hsl(var(--accent)/0.2)]" />
             </div>
-            <img src={sortingHatImage} alt="Sorting Hat" loading="lazy" className="absolute -top-8 -right-4 w-20 -rotate-12" />
+            <img src={sortingHatImage} alt="Sorting Hat" loading="lazy" className="absolute -top-8 -right-4 w-20 -rotate-12 animate-float-gentle" />
           </div>
 
           <div className="lg:col-span-7 space-y-8">
-            <div className="zine-label -rotate-2 text-3xl sm:text-4xl">
-              ABOUT <span className="font-bold">ME</span> <span className="ml-2">☺</span>
+            <div>
+              <span className="section-tag">About me</span>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold mt-5">
+                Code, creativity <span className="neon-text">& a little magic</span>
+              </h2>
             </div>
-            <p className="font-bold leading-relaxed" style={mono}>
+            <p className="text-lg leading-relaxed text-muted-foreground">
               Prakhar Tiwari is a front-end developer and video editor studying B.Tech at ITM Gwalior,
               crafting interfaces where creativity and code meet — a little like casting a good charm.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-8">
-              <div className="flex gap-3">
-                <span className="text-4xl leading-none">✱</span>
-                <div>
-                  <p className="uppercase text-sm font-bold" style={mono}>What I do</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Front-end development, video editing, web design, UI prototyping and responsive design.
-                  </p>
-                </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="glass-card p-6">
+                <p className="uppercase text-sm font-semibold text-primary tracking-wider">What I do</p>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                  Front-end development, video editing, web design, UI prototyping and responsive design.
+                </p>
               </div>
-              <div className="flex gap-3">
-                <span className="text-4xl leading-none">✱</span>
-                <div>
-                  <p className="uppercase text-sm font-bold" style={mono}>Words I live by</p>
-                  <p className="text-sm text-muted-foreground mt-2 italic">
-                    "It is our choices that show what we truly are, far more than our abilities." — Dumbledore
-                  </p>
-                </div>
+              <div className="glass-card p-6">
+                <p className="uppercase text-sm font-semibold text-primary tracking-wider">Words I live by</p>
+                <p className="text-sm text-muted-foreground mt-2 italic leading-relaxed">
+                  "It is our choices that show what we truly are, far more than our abilities." — Dumbledore
+                </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 border-2 border-foreground">
-              {highlights.map((h, i) => (
-                <div key={h.label} className={`p-4 text-center ${i ? "border-l-2 border-foreground" : ""}`}>
-                  <div className="text-2xl sm:text-3xl font-bold" style={mono}>{h.value}</div>
-                  <div className="text-xs uppercase text-muted-foreground">{h.label}</div>
+            <div className="grid grid-cols-3 gap-4">
+              {highlights.map((h) => (
+                <div key={h.label} className="glass-card p-5 text-center">
+                  <div className="font-display text-3xl sm:text-4xl font-bold neon-text">{h.value}</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{h.label}</div>
                 </div>
               ))}
             </div>
@@ -76,18 +73,16 @@ const About = () => {
         </div>
 
         {/* Education */}
-        <div className="mt-20">
-          <div className="text-center mb-10">
-            <span className="zine-label text-2xl sm:text-3xl">
-              <span className="font-bold">EDUCATION</span> ⚡
-            </span>
+        <div className="mt-24">
+          <div className="text-center mb-12">
+            <span className="section-tag"><GraduationCap size={12} /> Education</span>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {education.map((e) => (
-              <div key={e.degree} className="border-t-2 border-foreground pt-4">
-                <p className="font-bold underline uppercase" style={mono}>{e.degree}</p>
-                <p className="text-sm mt-2">{e.institution}</p>
-                <p className="text-xs text-muted-foreground mt-1">{e.period} · {e.status}</p>
+              <div key={e.degree} className="glass-card p-6">
+                <p className="font-display font-bold text-lg uppercase">{e.degree}</p>
+                <p className="text-sm text-muted-foreground mt-2">{e.institution}</p>
+                <p className="text-xs text-primary mt-3 tracking-wider">{e.period} · {e.status}</p>
               </div>
             ))}
           </div>

@@ -3,8 +3,6 @@ import phoenixImage from "@/assets/phoenix.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { techSkills, creativeSkills, tools } from "@/data/portfolio";
 
-const mono = { fontFamily: "'Space Mono', monospace" };
-
 const services = [
   { icon: Laptop, title: "Front-End Development", text: "fast, responsive React interfaces" },
   { icon: Clapperboard, title: "Video Editing", text: "cuts, colour and motion for creators" },
@@ -12,14 +10,14 @@ const services = [
   { icon: Database, title: "Full-Stack Apps", text: "logins, databases and dashboards" },
 ];
 
-const SkillBar = ({ name, level }: { name: string; level: number }) => (
+const SkillBar = ({ name, level, animate }: { name: string; level: number; animate: boolean }) => (
   <div>
-    <div className="flex justify-between text-sm mb-1" style={mono}>
-      <span>{name}</span>
-      <span>{level}%</span>
+    <div className="flex justify-between text-sm mb-2">
+      <span className="font-medium">{name}</span>
+      <span className="text-primary">{level}%</span>
     </div>
-    <div className="h-3 border-2 border-foreground">
-      <div className="h-full bg-foreground" style={{ width: `${level}%` }} />
+    <div className="skill-track">
+      <div className="skill-fill" style={{ width: animate ? `${level}%` : "0%" }} />
     </div>
   </div>
 );
@@ -28,43 +26,47 @@ const Skills = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="skills" className="py-24 border-t-2 border-foreground relative">
+    <section id="skills" className="py-24 relative overflow-hidden">
+      <div className="glow-orb w-[450px] h-[450px] top-40 -left-48" style={{ background: "hsl(var(--primary) / 0.07)" }} />
       <div
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
         <div className="text-center mb-16 relative">
-          <span className="zine-label text-3xl sm:text-4xl">
-            <span className="font-bold">SERVICES</span> I OFFER
-          </span>
-          <img src={phoenixImage} alt="Fawkes the Phoenix" loading="lazy" className="absolute -top-10 right-0 w-14 sm:w-20" />
+          <span className="section-tag">Services I offer</span>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold mt-5">
+            Spells <span className="neon-text">& services</span>
+          </h2>
+          <img src={phoenixImage} alt="Fawkes the Phoenix" loading="lazy" className="absolute -top-10 right-0 w-14 sm:w-20 animate-float-gentle" />
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-10 max-w-3xl mx-auto mb-20">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
           {services.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="flex gap-5 items-start">
-              <Icon size={52} strokeWidth={1.25} className="shrink-0" />
+            <div key={title} className="glass-card p-6 flex gap-5 items-start group">
+              <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center border border-border group-hover:border-primary/50 transition-colors" style={{ background: "hsl(var(--primary) / 0.08)" }}>
+                <Icon size={22} className="text-primary" />
+              </div>
               <div>
-                <p className="font-bold underline uppercase text-sm" style={mono}>{title}</p>
+                <p className="font-display font-bold">{title}</p>
                 <p className="text-sm text-muted-foreground mt-1">{text}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="card-parchment p-6 space-y-4">
-            <p className="flex items-center gap-2 font-bold uppercase" style={mono}><Code2 size={18} /> Technical spells</p>
-            {techSkills.map((s) => <SkillBar key={s.name} {...s} />)}
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="glass-card p-8 space-y-5">
+            <p className="flex items-center gap-2 font-display font-bold text-lg"><Code2 size={20} className="text-primary" /> Technical spells</p>
+            {techSkills.map((s) => <SkillBar key={s.name} {...s} animate={isVisible} />)}
           </div>
-          <div className="card-parchment p-6 space-y-4">
-            <p className="flex items-center gap-2 font-bold uppercase" style={mono}><Wand2 size={18} /> Creative charms</p>
-            {creativeSkills.map((s) => <SkillBar key={s.name} {...s} />)}
+          <div className="glass-card p-8 space-y-5">
+            <p className="flex items-center gap-2 font-display font-bold text-lg"><Wand2 size={20} className="text-accent" /> Creative charms</p>
+            {creativeSkills.map((s) => <SkillBar key={s.name} {...s} animate={isVisible} />)}
             <div className="pt-4">
-              <p className="uppercase text-xs mb-3" style={mono}>Tools in my trunk</p>
+              <p className="uppercase text-xs tracking-[0.25em] text-muted-foreground mb-4">Tools in my trunk</p>
               <div className="flex flex-wrap gap-2">
                 {tools.map((t) => (
-                  <span key={t} className="border-2 border-foreground px-3 py-1 text-xs" style={mono}>{t}</span>
+                  <span key={t} className="tool-chip">{t}</span>
                 ))}
               </div>
             </div>
