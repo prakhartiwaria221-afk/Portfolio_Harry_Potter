@@ -39,31 +39,30 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border/30"
+          ? "bg-background/70 backdrop-blur-xl border-b border-border/50"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 py-4">
+        <div className="flex items-center justify-between py-4">
           <a href="#home" className="flex items-center gap-2 group">
-            <span className="text-xl font-bold text-foreground tracking-tight" style={{ fontFamily: "'Space Mono', monospace" }}>
-              P<span className="text-primary">⚡</span>T
+            <span className="font-display text-xl font-extrabold tracking-tight">
+              P<span className="neon-text">⚡</span>T
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1 border border-border/60 rounded-full px-2 py-1 bg-card/50 backdrop-blur-xl">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.slice(1);
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                  className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300 ${
                     isActive
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-primary/15 text-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
-                  style={{ fontFamily: "'Courier Prime', monospace", fontSize: '0.95rem' }}
                 >
                   {link.name}
                 </a>
@@ -86,7 +85,7 @@ const Navigation = () => {
 
         {isOpen && (
           <div className="md:hidden pb-6 animate-fade-in">
-            <div className="flex flex-col gap-1 bg-card/90 backdrop-blur-xl rounded-2xl p-3 border border-border/30">
+            <div className="flex flex-col gap-1 glass-card p-3">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.slice(1);
                 return (
@@ -95,11 +94,10 @@ const Navigation = () => {
                     href={link.href}
                     className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                       isActive
-                        ? "text-primary-foreground bg-primary"
+                        ? "text-primary bg-primary/10"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                     }`}
                     onClick={() => setIsOpen(false)}
-                    style={{ fontFamily: "'Courier Prime', monospace" }}
                   >
                     {link.name}
                   </a>
