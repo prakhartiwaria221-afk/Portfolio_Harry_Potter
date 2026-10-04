@@ -26,17 +26,16 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <section id="achievements" className="py-20 px-4 relative">
+    <section id="achievements" className="py-24 px-4 relative overflow-hidden">
+      <div className="glow-orb w-[400px] h-[400px] bottom-0 -left-40" style={{ background: "hsl(var(--primary) / 0.07)" }} />
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <div className="text-center mb-12">
-            <span className="zine-label inline-block border-2 border-foreground px-4 py-1 font-mono text-sm tracking-widest uppercase -rotate-2 bg-card">
-              Achievements ✦
-            </span>
-            <h2 className="font-mono text-3xl md:text-4xl font-bold mt-6 uppercase tracking-tight">
-              The Trophy Room
+          <div className="text-center mb-14">
+            <span className="section-tag">Achievements ✦</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-5">
+              The <span className="neon-text">Trophy Room</span>
             </h2>
-            <p className="font-mono text-sm text-muted-foreground mt-3">
+            <p className="text-sm text-muted-foreground mt-4">
               "It is our choices that show what we truly are." — and what we've built.
             </p>
           </div>
@@ -45,12 +44,14 @@ const Achievements = () => {
         <div className="grid sm:grid-cols-2 gap-6">
           {achievements.map((a, i) => (
             <ScrollReveal key={a.title} delay={i * 100}>
-              <div className="border-2 border-foreground bg-card p-6 h-full hover:-translate-y-1 transition-transform duration-300 shadow-[4px_4px_0_hsl(var(--foreground))]">
-                <a.icon className="w-8 h-8 mb-4 text-primary" />
-                <h3 className="font-mono font-bold text-lg uppercase tracking-wide mb-2">
+              <div className="glass-card p-7 h-full group">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-border mb-5 group-hover:border-primary/50 transition-colors" style={{ background: "hsl(var(--primary) / 0.08)" }}>
+                  <a.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display font-bold text-lg mb-2">
                   {a.title}
                 </h3>
-                <p className="font-mono text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {a.text}
                 </p>
               </div>

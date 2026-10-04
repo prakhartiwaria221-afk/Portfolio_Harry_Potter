@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Loader2, Sparkles } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
-const mono = { fontFamily: "'Space Mono', monospace" };
 const FN_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/recommend-projects`;
 
 type Result = { summary: string; projects: { title: string; reason: string }[]; skills: string[] };
@@ -67,11 +66,13 @@ const ProjectFinder = () => {
   };
 
   return (
-    <div className="mt-24 card-parchment p-6 sm:p-10">
-      <span className="zine-label -rotate-2 text-xl sm:text-2xl">
-        ASK THE <span className="font-bold">SORTING HAT</span> 🎩
-      </span>
-      <p className="mt-6 text-sm text-muted-foreground max-w-xl">
+    <div className="mt-24 glass-card p-6 sm:p-10 relative overflow-hidden">
+      <div className="glow-orb w-[300px] h-[300px] -top-32 -right-24" style={{ background: "hsl(var(--accent) / 0.1)" }} />
+      <span className="section-tag">Ask the Sorting Hat 🎩</span>
+      <h3 className="font-display text-2xl sm:text-3xl font-bold mt-4">
+        Not sure where to start? <span className="neon-text">Let AI sort you.</span>
+      </h3>
+      <p className="mt-4 text-sm text-muted-foreground max-w-xl leading-relaxed">
         Tell me what you're interested in — and AI will pick the projects and skills of mine you'll like most.
       </p>
       <form onSubmit={submit} className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -80,35 +81,30 @@ const ProjectFinder = () => {
           onChange={(e) => setInterests(e.target.value)}
           maxLength={500}
           placeholder="e.g. AI apps, e-commerce, C++ ..."
-          className="flex-1 bg-transparent border-2 border-foreground px-4 py-3 text-sm outline-none focus:bg-background"
-          style={mono}
+          className="flex-1 bg-secondary/40 border border-border rounded-full px-5 py-3 text-sm outline-none focus:border-primary/60 focus:shadow-[0_0_20px_hsl(var(--primary)/0.1)] transition-all placeholder:text-muted-foreground"
         />
         <button
           type="submit"
           disabled={loading || !interests.trim()}
-          className="zine-label flex items-center justify-center gap-2 text-sm disabled:opacity-50"
-          style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+          className="btn-neon justify-center disabled:opacity-50"
         >
           {loading ? <Loader2 size={16} className="animate-spin" /> : <Sparkles size={16} />}
-          {loading ? "THINKING..." : "SORT ME"}
+          {loading ? "Thinking..." : "Sort me"}
         </button>
       </form>
 
-      {error && <p className="mt-4 text-sm text-destructive" style={mono}>{error}</p>}
+      {error && <p className="mt-4 text-sm text-destructive">{error}</p>}
 
       {result && (
         <div className="mt-8 space-y-6 animate-fade-in">
-          <p className="font-bold" style={mono}>"{result.summary}"</p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <p className="font-medium text-lg">"{result.summary}"</p>
+          <div className="grid md:grid-cols-2 gap-4">
             {result.projects.map((r) => {
               const p = projects.find((x) => x.title === r.title);
               return (
-                <a key={r.title} href={p?.link} target="_blank" rel="noopener noreferrer" className="flex gap-3 group">
-                  <span className="text-3xl leading-none">✱</span>
-                  <div>
-                    <p className="font-bold underline uppercase text-sm group-hover:opacity-70" style={mono}>{r.title}</p>
-                    <p className="text-sm text-muted-foreground mt-1">{r.reason}</p>
-                  </div>
+                <a key={r.title} href={p?.link} target="_blank" rel="noopener noreferrer" className="glass-card p-5 group block">
+                  <p className="font-display font-bold group-hover:text-primary transition-colors">{r.title}</p>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{r.reason}</p>
                 </a>
               );
             })}
@@ -116,7 +112,7 @@ const ProjectFinder = () => {
           {result.skills?.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {result.skills.map((s) => (
-                <span key={s} className="border-2 border-foreground px-3 py-1 text-xs" style={mono}>⚡ {s}</span>
+                <span key={s} className="tool-chip">⚡ {s}</span>
               ))}
             </div>
           )}

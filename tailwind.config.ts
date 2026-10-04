@@ -56,8 +56,8 @@ export default {
         "darker-surface": "hsl(var(--darker-surface))",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        display: ['Syne', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
