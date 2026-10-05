@@ -91,27 +91,20 @@ const SortingQuiz = ({ onComplete }: Props) => {
   if (!started) {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-xl">
-        <div className="text-center max-w-lg px-6 animate-fade-in">
+        <div className="glow-orb w-[400px] h-[400px] top-10 left-1/4" style={{ background: "hsl(var(--primary) / 0.1)" }} />
+        <div className="text-center max-w-lg px-6 animate-fade-in relative z-10">
           <img src={sortingHatImage} alt="Sorting Hat" className="w-28 h-28 mx-auto mb-6 animate-float-gentle drop-shadow-[0_0_20px_rgba(218,165,32,0.4)]" width={512} height={512} />
-          <h1 className="text-4xl sm:text-5xl font-black mb-4 text-foreground" style={{ fontFamily: "'Space Mono', monospace" }}>
-            The Sorting <span className="text-shimmer">Ceremony</span>
+          <h1 className="font-display text-4xl sm:text-5xl font-extrabold mb-4 text-foreground">
+            The Sorting <span className="neon-text">Ceremony</span>
           </h1>
-          <p className="text-muted-foreground text-lg mb-8" style={{ fontFamily: "'Courier Prime', monospace" }}>
+          <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
             "Oh you may not think I'm pretty, but don't judge on what you see…" — Let the Sorting Hat decide your house before you explore this portfolio.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={() => setStarted(true)}
-              className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold text-lg transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(218,165,32,0.4)]"
-              style={{ fontFamily: "'Space Mono', monospace" }}
-            >
+            <button onClick={() => setStarted(true)} className="btn-neon justify-center">
               ⚡ Begin Sorting
             </button>
-            <button
-              onClick={() => onComplete("skip")}
-              className="px-8 py-3 rounded-full border border-border text-muted-foreground font-medium transition-all hover:text-foreground hover:border-foreground/30"
-              style={{ fontFamily: "'Courier Prime', monospace" }}
-            >
+            <button onClick={() => onComplete("skip")} className="btn-ghost-neon justify-center">
               Skip to Portfolio
             </button>
           </div>
@@ -128,20 +121,16 @@ const SortingQuiz = ({ onComplete }: Props) => {
           <div className={`w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br ${house.color} flex items-center justify-center text-5xl shadow-lg animate-float-gentle`}>
             {house.crest}
           </div>
-          <h2 className="text-4xl font-black mb-2 text-foreground" style={{ fontFamily: "'Space Mono', monospace" }}>
+          <h2 className="font-display text-4xl font-extrabold mb-2 text-foreground">
             {result}!
           </h2>
-          <p className="text-primary text-lg mb-4 italic" style={{ fontFamily: "'Courier Prime', monospace" }}>
+          <p className="text-primary text-lg mb-4 italic">
             "{house.motto}"
           </p>
-          <p className="text-muted-foreground mb-8" style={{ fontFamily: "'Courier Prime', monospace" }}>
+          <p className="text-muted-foreground mb-8">
             The Sorting Hat has spoken. Welcome to your house!
           </p>
-          <button
-            onClick={() => onComplete(result)}
-            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold text-lg transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(218,165,32,0.4)]"
-            style={{ fontFamily: "'Space Mono', monospace" }}
-          >
+          <button onClick={() => onComplete(result)} className="btn-neon">
             ⚡ Explore Portfolio
           </button>
         </div>
@@ -155,7 +144,7 @@ const SortingQuiz = ({ onComplete }: Props) => {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-xl">
       <div className="max-w-xl w-full px-6 animate-fade-in">
         <div className="flex items-center justify-between mb-8">
-          <span className="text-sm text-muted-foreground" style={{ fontFamily: "'Courier Prime', monospace" }}>
+          <span className="text-sm text-muted-foreground">
             Question {currentQ + 1} of {questions.length}
           </span>
           <div className="flex gap-1.5">
@@ -165,7 +154,7 @@ const SortingQuiz = ({ onComplete }: Props) => {
           </div>
         </div>
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8" style={{ fontFamily: "'Space Mono', monospace" }}>
+        <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-8">
           {q.question}
         </h2>
 
@@ -177,9 +166,8 @@ const SortingQuiz = ({ onComplete }: Props) => {
               className={`w-full text-left px-6 py-4 rounded-2xl border transition-all duration-300 ${
                 selectedOption === i
                   ? 'border-primary bg-primary/10 scale-[1.02]'
-                  : 'border-border/50 hover:border-primary/50 hover:bg-primary/5 card-parchment'
+                  : 'glass-card hover:border-primary/50'
               }`}
-              style={{ fontFamily: "'Courier Prime', monospace" }}
             >
               <span className="text-foreground text-base">{opt.text}</span>
             </button>
