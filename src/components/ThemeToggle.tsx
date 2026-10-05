@@ -11,18 +11,6 @@ const ThemeToggle = () => {
     const initialTheme = savedTheme || "dark";
     setTheme(initialTheme);
     document.documentElement.classList.toggle("light", initialTheme === "light");
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem("theme")) {
-        const newTheme = e.matches ? "dark" : "light";
-        setTheme(newTheme);
-        document.documentElement.classList.toggle("light", newTheme === "light");
-      }
-    };
-
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const toggleTheme = () => {
