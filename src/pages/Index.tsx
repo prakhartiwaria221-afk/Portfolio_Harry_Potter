@@ -29,7 +29,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen relative">
       {/* Hogwarts castle backdrop — fixed, dimmed, behind everything */}
       <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
         <img
