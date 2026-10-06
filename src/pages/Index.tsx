@@ -31,16 +31,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Hogwarts castle backdrop — fixed, dimmed, behind everything */}
+      {/* Hogwarts castle backdrop — day/night themed, fixed, dimmed, behind everything */}
       <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
         <img
           src={hogwartsBg}
           alt=""
           width={1920}
           height={1088}
-          className="w-full h-full object-cover opacity-25 dark:opacity-35"
+          className="bg-night-img w-full h-full object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/80" />
+        <img
+          src={hogwartsDayBg}
+          alt=""
+          width={1920}
+          height={1088}
+          loading="lazy"
+          className="bg-day-img w-full h-full object-cover opacity-30"
+        />
+        <div className="bg-overlay-night absolute inset-0" />
+        <div className="bg-overlay-day absolute inset-0" />
       </div>
       <CustomCursor />
       <MagicalParticles />
