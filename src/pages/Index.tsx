@@ -14,6 +14,7 @@ import SortingQuiz from "@/components/SortingQuiz";
 import SectionDots from "@/components/SectionDots";
 import { ScrollProgress } from "@/components/ScrollAnimations";
 import hogwartsBg from "@/assets/hogwarts-bg.jpg";
+import hogwartsDayBg from "@/assets/hogwarts-day-bg.jpg";
 
 const Index = () => {
   const [sorted, setSorted] = useState(false);
