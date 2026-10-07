@@ -58,6 +58,9 @@ const Hero = ({ house }: HeroProps) => {
               <a href="#contact" className="btn-ghost-neon">
                 Send an Owl 🦉
               </a>
+              <Link to="/sorting" className="btn-ghost-neon">
+                🎩 Take the Sorting Quiz
+              </Link>
             </div>
           </div>
 
