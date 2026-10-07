@@ -3,6 +3,7 @@ import dumbledoreImage from "@/assets/dumbledore.png";
 import goldenSnitchImage from "@/assets/golden-snitch.png";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
   house?: string | null;
